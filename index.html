@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon Gym Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pokemon Gym Manager</h1>
+
+    <div id="gym-setup">
+        <h2>Gym Setup</h2>
+        <label>Region:
+            <select id="region-select">
+                <option value="kanto">Kanto</option>
+                <option value="johto">Johto</option>
+                <option value="hoenn">Hoenn</option>
+                <option value="sinnoh">Sinnoh</option>
+                <option value="unova">Unova</option>
+                <option value="kalos">Kalos</option>
+                <option value="alola">Alola</option>
+                <option value="galar">Galar</option>
+                <option value="paldea">Paldea</option>
+            </select>
+        </label>
+
+        <label>Type Specialist:
+            <select id="type-select">
+                <option value="normal">Normal</option>
+                <option value="fire">Fire</option>
+                <option value="water">Water</option>
+                <option value="grass">Grass</option>
+                <option value="electric">Electric</option>
+                <option value="ice">Ice</option>
+                <option value="fighting">Fighting</option>
+                <option value="poison">Poison</option>
+                <option value="ground">Ground</option>
+                <option value="flying">Flying</option>
+                <option value="psychic">Psychic</option>
+                <option value="bug">Bug</option>
+                <option value="rock">Rock</option>
+                <option value="ghost">Ghost</option>
+                <option value="dragon">Dragon</option>
+                <option value="dark">Dark</option>
+                <option value="steel">Steel</option>
+                <option value="fairy">Fairy</option>
+            </select>
+        </label>
+
+        <label>Gym Number:
+            <select id="gym-number-select">
+                <option value="1">1 (2 Pokemon)</option>
+                <option value="2">2 (2 Pokemon)</option>
+                <option value="3">3 (3 Pokemon)</option>
+                <option value="4">4 (4 Pokemon)</option>
+                <option value="5">5 (4 Pokemon)</option>
+                <option value="6">6 (5 Pokemon)</option>
+                <option value="7">7 (5 Pokemon)</option>
+                <option value="8">8 (6 Pokemon)</option>
+            </select>
+        </label>
+
+        <button id="setup-confirm">Confirm Setup</button>
+    </div>
+
+    <div id="message"></div>
+
+    <div id="pokemon-selection">
+        <div class="loading">Loading Pokémon...</div>
+    </div>
+
+    <div id="ai-challenge">
+        <h2>AI Challenger</h2>
+        <div id="ai-setup">
+            <p>Choose your AI opponent difficulty:</p>
+            <div class="difficulty-buttons">
+                <button class="difficulty-btn" data-difficulty="easy">Easy Trainer</button>
+                <button class="difficulty-btn" data-difficulty="normal">Gym Challenger</button>
+                <button class="difficulty-btn" data-difficulty="hard">Elite Trainer</button>
+            </div>
+        </div>
+
+        <div id="ai-team-display" style="display: none;">
+            <h3>AI Opponent's Team</h3>
+            <div id="ai-team-grid" class="team-grid"></div>
+            <button id="start-battle" class="battle-btn">Start Battle!</button>
+        </div>
+    </div>
+
+    <div id="battle-arena" style="display: none;">
+        <h2>Battle Arena</h2>
+        <div class="battle-status">
+            <div class="battle-info">
+                <span id="battle-turn">Turn 1</span> - <span id="battle-phase">Player Turn</span>
+            </div>
+        </div>
+
+        <div class="battle-field">
+            <div class="player-section">
+                <h3>Your Team (Gym Leader)</h3>
+                <div id="player-pokemon-display" class="battle-team"></div>
+            </div>
+
+            <div class="vs-section">
+                <div class="vs-indicator">VS</div>
+                <div class="battle-log" id="battle-log"></div>
+            </div>
+
+            <div class="ai-section">
+                <h3>AI Challenger</h3>
+                <div id="ai-pokemon-display" class="battle-team"></div>
+            </div>
+        </div>
+
+        <div class="battle-controls">
+            <button id="attack-btn" class="battle-action">Attack</button>
+            <button id="defend-btn" class="battle-action">Defend</button>
+            <button id="switch-btn" class="battle-action">Switch Pokemon</button>
+            <div id="switch-options" class="switch-menu" style="display: none;"></div>
+        </div>
+
+        <div id="battle-result" class="battle-result" style="display: none;">
+            <h3 id="result-title"></h3>
+            <p id="result-message"></p>
+            <button id="new-battle" class="battle-btn">New Battle</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
